@@ -1,6 +1,11 @@
+var feedID = "534138";
+var aioKey = "";
+
+var urlPath = "https://io.adafruit.com/api/feeds/" + feedID + "/data?x-aio-key=" + aioKey;
+
 $.ajax({
   dataType: "json",
-  url: "https://io.adafruit.com/api/feeds/FEED-ID/data?x-aio-key=AIO-KEY",
+  url: urlPath,
   success: success
 });
 
@@ -24,7 +29,7 @@ function success(results) {
     colorBox.attr("class","color-value")
 
     //Append the div onto the data div
-    $("div#data").append(colorBox);
+    $("body").append(colorBox);
   }
 
 }
